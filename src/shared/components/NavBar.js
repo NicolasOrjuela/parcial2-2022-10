@@ -28,6 +28,11 @@ export const NavBar = () => {
                 <FormattedMessage id='pokemons' />
               </Link>
             </li>
+            <li>
+              <Link className='nav-link' to='/report'>
+                Chart
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

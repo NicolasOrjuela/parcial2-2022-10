@@ -5,6 +5,12 @@ const spanish = {
     hello: 'Hola',
     pokemons: 'Pokemons',
     test: 'Parcial-Web',
+    Image: "Imagen",
+    Name: "Nombre",
+    Description: "Descripcion",
+    Height: "Altura",
+    Weight: "Peso",
+    Type: "Tipo"
   },
 };
 

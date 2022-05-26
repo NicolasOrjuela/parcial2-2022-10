@@ -5,10 +5,19 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import messages from './i18n/messages';
 import { NavBar } from './shared/components/NavBar';
 import { PokemonList } from './pages/pokemon-list/PokemonList';
+import  PokemonChart  from './pages/pokemon-chart/PokemonChart';
 import './App.scss';
 
 function App() {
-  const [language, setLanguage] = useState(LOCALES.SPANISH);
+  const localLang = navigator.language;
+
+let language;
+if (localLang === "en") {
+  language = LOCALES.ENGLISH;
+} else {
+  language = LOCALES.SPANISH;
+}
+  //const [language, setLanguage] = useState(LOCALES.SPANISH);
   return (
     <>
       <IntlProvider locale={language} messages={messages[language]}>
@@ -16,6 +25,7 @@ function App() {
           <NavBar></NavBar>
           <Routes>
             <Route exact path='/' element={<PokemonList></PokemonList>} />
+            <Route exact path='/report' element={<PokemonChart></PokemonChart>} />
             <Route
               path='*'
               element={
